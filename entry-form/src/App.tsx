@@ -99,14 +99,12 @@ function CheckboxGroup({
 }
 
 function App() {
-  const [description, setDescription] = useState("");
+  const [fullname, setFullname] = useState("");
   const [gender, setGender] = useState("");
   const [subjects, setSubjects] = useState<string[]>([]);
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubjectChange = (
-    e: React.ChangeEvent<HTMLInputElement>
-  ) => {
+  const handleSubjectChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setSubjects((prev) =>
       prev.includes(value)
@@ -129,8 +127,8 @@ function App() {
           label="Full Name"
           type="text"
           placeholder="Enter full name"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
+          value={fullname}
+          onChange={(e) => setFullname(e.target.value)}
         />
 
         <RadioGroup
@@ -143,7 +141,7 @@ function App() {
 
         <CheckboxGroup
           label="Subjects"
-          options={["Maths", "Science", "Social", "Health", "Computer"]}
+          options={["Maths", "English", "Computer"]}
           selectedValues={subjects}
           onChange={handleSubjectChange}
         />
@@ -154,16 +152,22 @@ function App() {
 
         {submitted && (
           <div className="result">
-            {description && (
-              <p><strong>Description:</strong> {description}</p>
+            {fullname && (
+              <p>
+                <strong>Full Name:</strong> {fullname}
+              </p>
             )}
             {gender ? (
-              <p><strong>Gender:</strong> {gender}</p>
+              <p>
+                <strong>Gender:</strong> {gender}
+              </p>
             ) : (
               <p className="error">Please select gender</p>
             )}
             {subjects.length > 0 && (
-              <p><strong>Subjects:</strong> {subjects.join(", ")}</p>
+              <p>
+                <strong>Subjects:</strong> {subjects.join(", ")}
+              </p>
             )}
           </div>
         )}
