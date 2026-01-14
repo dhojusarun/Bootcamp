@@ -122,13 +122,13 @@ function App() {
 
   return (
     <div className="container">
-      <form className="form-card" onSubmit={handleSubmit}>
-        <h1>Simple Form</h1>
+      <form className="form-base" onSubmit={handleSubmit}>
+        <h1>Registration Form</h1>
 
         <InputField
-          label="First Name"
+          label="Full Name"
           type="text"
-          placeholder="Enter first name"
+          placeholder="Enter full name"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
