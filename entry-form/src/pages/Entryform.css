@@ -37,7 +37,7 @@ body {
 /* Heading */
 .form-card h1 {
   margin-bottom: 22px;
-  color: rgb(165, 125, 125);
+  color: #a57d7d;
 }
 
 /* Common form group */
@@ -69,7 +69,7 @@ body {
 
 .form-group input[type="text"]:focus {
   outline: none;
-  border-color: rgb(165, 125, 125);
+  border-color: #a57d7d;
   box-shadow: 0 0 0 3px rgba(165, 125, 125, 0.2);
 }
 
@@ -102,7 +102,7 @@ button[type="submit"] {
   width: 100%;
   height: 42px;
   margin-top: 14px;
-  background-color: #337ab7;
+  background-color: #a57d7d;
   color: #ffffff;
   border: none;
   border-radius: 6px;
@@ -113,7 +113,7 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-  background-color: #286090;
+  background-color: #544c4c;
 }
 
 button[type="submit"]:active {

@@ -3,7 +3,7 @@
   margin: 30px auto;
   padding: 20px;
   background-color: #fefefe;
-  border: 2px solid #4a90e2;
+  border: 2px solid #4ae251;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   font-family: Arial, sans-serif;
@@ -11,7 +11,7 @@
 
 h1 {
   text-align: center;
-  color: #4a90e2;
+  color: #a57d7d;
 }
 
 .todo-input {
@@ -31,7 +31,7 @@ h1 {
 .todo-input button {
   padding: 8px 16px;
   border: none;
-  background-color: #4a90e2;
+  background-color: #a57d7d;
   color: white;
   font-weight: bold;
   border-radius: 6px;
@@ -39,7 +39,7 @@ h1 {
 }
 
 .todo-input button:hover {
-  background-color: #357abd;
+  background-color: #544c4c;
 }
 
 .task-list {
