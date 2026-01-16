@@ -30,65 +30,78 @@ type FormInputProps =
   | CheckboxInputProps;
 
 const FormInput: React.FC<FormInputProps> = (props) => {
-  if (props.type === "radio") {
-    const { label, name, value, options, onChange } = props;
-    return (
-      <div className="form-group">
-        <label>{label}</label>
-        {options.map((opt) => (
-          <label key={opt}>
+  const renderInput = () => {
+    switch (props.type) {
+      case "radio": {
+        const { label, name, value, options, onChange } = props;
+        return (
+          <>
+            <label>{label}</label>
+            {options.map((opt) => (
+              <label key={opt}>
+                <input
+                  type="radio"
+                  name={name}
+                  value={opt}
+                  checked={value === opt}
+                  onChange={(e) => onChange(e.target.value)}
+                />
+                {opt}
+              </label>
+            ))}
+          </>
+        );
+      }
+
+      case "checkbox": {
+        const { label, values, options, onChange } = props;
+        return (
+          <>
+            <label>{label}</label>
+            {options.map((opt) => {
+              const checked = values.includes(opt);
+              return (
+                <label key={opt}>
+                  <input
+                    type="checkbox"
+                    checked={checked}
+                    onChange={() =>
+                      onChange(
+                        checked
+                          ? values.filter((v) => v !== opt)
+                          : [...values, opt]
+                      )
+                    }
+                  />
+                  {opt}
+                </label>
+              );
+            })}
+          </>
+        );
+      }
+
+      case "text": {
+        const { label, value, placeholder, onChange } = props;
+        return (
+          <>
+            <label>{label}</label>
             <input
-              type="radio"
-              name={name}
-              value={opt}
-              checked={value === opt}
+              type="text"
+              placeholder={placeholder}
+              value={value}
               onChange={(e) => onChange(e.target.value)}
             />
-            {opt}
-          </label>
-        ))}
-      </div>
-    );
-  }
+          </>
+        );
+      }
 
-  if (props.type === "checkbox") {
-    const { label, values, options, onChange } = props;
-    return (
-      <div className="form-group">
-        <label>{label}</label>
-        {options.map((opt) => (
-          <label key={opt}>
-            <input
-              type="checkbox"
-              checked={values.includes(opt)}
-              onChange={() =>
-                onChange(
-                  values.includes(opt)
-                    ? values.filter((v) => v !== opt)
-                    : [...values, opt]
-                )
-              }
-            />
-            {opt}
-          </label>
-        ))}
-      </div>
-    );
-  }
+      default:
+        return null;
+    }
+  };
 
-  // text input
-  const { label, value, placeholder, onChange } = props;
-  return (
-    <div className="form-group">
-      <label>{label}</label>
-      <input
-        type="text"
-        placeholder={placeholder}
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
-      />
-    </div>
-  );
+  return <div className="form-group">{renderInput()}</div>;
 };
-  
+
 export default FormInput;

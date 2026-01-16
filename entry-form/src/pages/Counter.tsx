@@ -2,57 +2,45 @@ import { useState } from "react";
 import "./Counter.css";
 
 function Counter() {
-  const [val, setVal] = useState(0);
-  const [input, setInput] = useState<number>(0); // Fix: input is number now
+  // Counter value
+  const [count, setCount] = useState(0);
 
-  console.log(val);
+  // Input value
+  const [stepValue, setStepValue] = useState(0);
+
+  const resetCounter = () => {
+    setCount(0);
+    setStepValue(0);
+  };
+
+  const changeByAmount = (amount: number) => {
+    setCount((prevCount) => prevCount + amount);
+  };
 
   return (
     <>
       <div className="text">
         <h1>Counter</h1>
       </div>
-      <br />
+
       <div className="add">
-        <h1>{val}</h1>
-        <button
-          onClick={() => {
-            setVal(0);
-            setInput(0); 
-          }}
-        >
-          Reset
-        </button>
+        <h1>{count}</h1>
+
+        <button onClick={resetCounter}>Reset</button>
 
         <div className="add1">
-          <button
-            onClick={() => {
-              setVal(val + 5);
-            }}
-          >
-            Add 5
-          </button>
-          <button
-            onClick={() => {
-              setVal(val - 5);
-            }}
-          >
-            Subtract 5
-          </button>
+          <button onClick={() => changeByAmount(5)}>Add 5</button>
+          <button onClick={() => changeByAmount(-5)}>Subtract 5</button>
         </div>
 
         <div className="add2">
           <input
-            value={input}
-            onChange={(e) => setInput(Number(e.target.value))} 
             type="number"
+            value={stepValue}
+            onChange={(e) => setStepValue(Number(e.target.value))}
             id="number"
           />
-          <button
-            onClick={() => {
-              setVal(val + input); 
-            }}
-          >
+          <button onClick={() => changeByAmount(stepValue)}>
             Add
           </button>
         </div>

@@ -9,20 +9,30 @@ const FormResult: React.FC<FormResultProps> = ({
   gender,
   subjects,
 }) => {
+  const hasDescription = description.trim().length > 0;
+  const hasGender = gender.trim().length > 0;
+  const hasSubjects = subjects.length > 0;
+
   return (
     <div className="result">
-      {description && (
-        <p><strong>Description:</strong> {description}</p>
+      {hasDescription && (
+        <p>
+          <strong>Description:</strong> {description}
+        </p>
       )}
 
-      {gender ? (
-        <p><strong>Gender:</strong> {gender}</p>
+      {hasGender ? (
+        <p>
+          <strong>Gender:</strong> {gender}
+        </p>
       ) : (
         <p className="error">Please select gender</p>
       )}
 
-      {subjects.length > 0 && (
-        <p><strong>Subjects:</strong> {subjects.join(", ")}</p>
+      {hasSubjects && (
+        <p>
+          <strong>Subjects:</strong> {subjects.join(", ")}
+        </p>
       )}
     </div>
   );
