@@ -1,20 +1,15 @@
-import React from 'react'
-import Header from './components/Header'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import About from "./pages/About";
 
-function App() {
-  return (
-    <>
-    <Header/>
-      {/* <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/todo' element={<Todo />} />
-        <Route path='/edittodo' element={<EditTodo />} />
-      </Routes> */}
-      {/* </Routes> */}
-    
-    </>
-  )
+
+export default function App() {
+return (
+<Router>
+<Routes>
+<Route path="/" element={<Home />} />
+<Route path="/about" element={<About />} />
+</Routes>
+</Router>
+);
 }
-
-
-export default App
