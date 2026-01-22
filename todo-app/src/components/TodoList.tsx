@@ -17,7 +17,7 @@ export default function TodoList({
   if (todos.length === 0) {
     return (
       <div className="text-center py-8 sm:py-12 bg-white dark:bg-gray-700 rounded-lg shadow-sm border border-gray-100 dark:border-gray-600 transition-colors duration-300">
-        <p className="text-gray-400 dark:text-gray-500 text-base sm:text-lg">No todos yet. Add one to get started!</p>
+        <p className="text-gray-50 dark:text-gray-50 text-base sm:text-lg">No todos yet. Add one to get started!</p>
       </div>
     );
   }

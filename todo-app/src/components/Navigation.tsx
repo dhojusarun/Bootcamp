@@ -8,7 +8,7 @@ export default function Navigation() {
     const isActive = (path: string) => location.pathname === path;
 
     return (
-        <nav className="bg-gradient-to-r from-purple-600 to-blue-600 dark:from-purple-800 dark:to-blue-800 text-white shadow-lg">
+        <nav className="gradient-primary dark:from-purple-800 dark:to-blue-800 text-white shadow-lg">
             <div className="container mx-auto px-4 sm:px-6 py-4">
                 <div className="flex items-center justify-between">
                     <h1 className="text-xl sm:text-2xl font-bold">Todo App</h1>

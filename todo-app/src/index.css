@@ -16,3 +16,69 @@
 }
 
 @variant dark (&:where(.dark, .dark *));
+
+/* Default Color Theme Variables */
+:root {
+    --primary-from: #9333ea;
+    --primary-to: #3b82f6;
+    --primary-light: #a855f7;
+    --primary-dark: #7c3aed;
+}
+
+/* Color Theme Variables */
+:root.theme-purple {
+    --primary-from: #9333ea;
+    --primary-to: #3b82f6;
+    --primary-light: #a855f7;
+    --primary-dark: #7c3aed;
+}
+
+:root.theme-blue {
+    --primary-from: #0ea5e9;
+    --primary-to: #3b82f6;
+    --primary-light: #38bdf8;
+    --primary-dark: #0284c7;
+}
+
+:root.theme-green {
+    --primary-from: #10b981;
+    --primary-to: #059669;
+    --primary-light: #34d399;
+    --primary-dark: #047857;
+}
+
+:root.theme-pink {
+    --primary-from: #ec4899;
+    --primary-to: #f43f5e;
+    --primary-light: #f472b6;
+    --primary-dark: #db2777;
+}
+
+:root.theme-orange {
+    --primary-from: #f97316;
+    --primary-to: #ea580c;
+    --primary-light: #fb923c;
+    --primary-dark: #c2410c;
+}
+
+/* Apply color themes */
+.gradient-primary {
+    background: linear-gradient(to right, var(--primary-from), var(--primary-to));
+}
+
+.text-primary {
+    color: var(--primary-light);
+}
+
+.border-primary {
+    border-color: var(--primary-light);
+}
+
+.ring-primary {
+    --tw-ring-color: var(--primary-light);
+}
+
+.hover-primary:hover {
+    background-color: var(--primary-light);
+    opacity: 0.1;
+}
