@@ -1,10 +1,8 @@
 import { useState } from "react";
+import { useTodos } from "../hooks/useTodos";
 
-interface Props {
-  addTodo: (text: string) => void;
-}
-
-export default function TodoForm({ addTodo }: Props) {
+export default function TodoForm() {
+  const { addTodo } = useTodos();
   const [text, setText] = useState<string>("");
 
   const handleSubmit = (e: React.FormEvent) => {

@@ -1,19 +1,13 @@
-import type { Todo } from "../pages/Home";
+import type { Todo } from "../context/TodoContext";
 import { useState } from "react";
+import { useTodos } from "../hooks/useTodos";
 
 interface Props {
   todo: Todo;
-  toggleTodo: (id: number) => void;
-  deleteTodo: (id: number) => void;
-  editTodo: (id: number, newText: string) => void;
 }
 
-export default function TodoItem({
-  todo,
-  toggleTodo,
-  deleteTodo,
-  editTodo,
-}: Props) {
+export default function TodoItem({ todo }: Props) {
+  const { toggleTodo, deleteTodo, editTodo } = useTodos();
   const [isEditing, setIsEditing] = useState(false);
   const [editText, setEditText] = useState(todo.text);
 

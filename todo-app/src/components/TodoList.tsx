@@ -1,19 +1,8 @@
 import TodoItem from "./TodoItem";
-import type { Todo } from "../pages/Home";
+import { useTodos } from "../hooks/useTodos";
 
-interface Props {
-  todos: Todo[];
-  toggleTodo: (id: number) => void;
-  deleteTodo: (id: number) => void;
-  editTodo: (id: number, newText: string) => void;
-}
-
-export default function TodoList({
-  todos,
-  toggleTodo,
-  deleteTodo,
-  editTodo,
-}: Props) {
+export default function TodoList() {
+  const { todos, toggleTodo, deleteTodo, editTodo } = useTodos();
   if (todos.length === 0) {
     return (
       <div className="text-center py-8 sm:py-12 bg-white dark:bg-gray-700 rounded-lg shadow-sm border border-gray-100 dark:border-gray-600 transition-colors duration-300">
