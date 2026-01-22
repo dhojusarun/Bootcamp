@@ -27,6 +27,14 @@ export default function Home() {
     setTodos(todos.filter(todo => todo.id !== id));
   };
 
+  const editTodo = (id: number, newText: string) => {
+    setTodos(
+      todos.map(todo =>
+        todo.id === id ? { ...todo, text: newText } : todo
+      )
+    );
+  };
+
   return (
     <div className="container mx-auto px-4 py-8 max-w-3xl">
       <div className="bg-white rounded-xl shadow-lg p-8">
@@ -36,6 +44,7 @@ export default function Home() {
           todos={todos}
           toggleTodo={toggleTodo}
           deleteTodo={deleteTodo}
+          editTodo={editTodo}
         />
       </div>
     </div>

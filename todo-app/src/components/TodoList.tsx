@@ -5,12 +5,14 @@ interface Props {
   todos: Todo[];
   toggleTodo: (id: number) => void;
   deleteTodo: (id: number) => void;
+  editTodo: (id: number, newText: string) => void;
 }
 
 export default function TodoList({
   todos,
   toggleTodo,
   deleteTodo,
+  editTodo,
 }: Props) {
   if (todos.length === 0) {
     return (
@@ -28,6 +30,7 @@ export default function TodoList({
           todo={todo}
           toggleTodo={toggleTodo}
           deleteTodo={deleteTodo}
+          editTodo={editTodo}
         />
       ))}
     </ul>
