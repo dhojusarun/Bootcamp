@@ -61,19 +61,26 @@ export default function TodoItem({
               onBlur={handleSave}
               onKeyDown={handleKeyDown}
               autoFocus
-              className="flex-1 px-3 py-1 border border-purple-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-lg bg-white dark:bg-gray-600 text-gray-900 dark:text-white"
+              className="flex-1 px-3 py-1 border border-purple-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-lg bg-white dark:bg-gray-600 text-gray-900 dark:text-gray-100"
             />
           ) : (
-            <span
-              onDoubleClick={handleDoubleClick}
-              className={`cursor-pointer text-lg transition-all ${todo.completed
-                  ? "line-through text-gray-400 dark:text-gray-300"
-                  : "text-gray-800 dark:text-white hover:text-purple-600 dark:hover:text-purple-400"
-                }`}
-              title="Double-click to edit"
-            >
-              {todo.text}
-            </span>
+            <div className="flex items-center gap-2 flex-1">
+              <span
+                onDoubleClick={handleDoubleClick}
+                className={`cursor-pointer text-lg transition-all ${todo.completed
+                    ? "line-through text-gray-500 dark:text-gray-400"
+                    : "text-gray-900 dark:text-gray-100 hover:text-purple-600 dark:hover:text-purple-300"
+                  }`}
+                title="Double-click to edit"
+              >
+                {todo.text}
+              </span>
+              {todo.completed && (
+                <span className="text-xs px-2 py-1 bg-emerald-100 dark:bg-emerald-600 text-emerald-900 dark:text-emerald-50 rounded-full font-bold">
+                  Completed
+                </span>
+              )}
+            </div>
           )}
         </div>
 
@@ -86,14 +93,14 @@ export default function TodoItem({
               }
             }}
             disabled={todo.completed}
-            className="px-3 py-2 text-blue-500 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-lg transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="px-3 py-2 text-blue-700 dark:text-blue-200 hover:bg-blue-100 dark:hover:bg-blue-800/40 rounded-lg transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed font-semibold"
             title="Edit task"
           >
             Edit
           </button>
           <button
             onClick={() => deleteTodo(todo.id)}
-            className="px-3 py-2 text-red-500 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-lg transition-all duration-200"
+            className="px-3 py-2 text-red-700 dark:text-red-200 hover:bg-red-100 dark:hover:bg-red-800/40 rounded-lg transition-all duration-200 font-semibold"
           >
             Delete
           </button>
