@@ -1,6 +1,7 @@
 import TodoItem from "./TodoItem";
 import { useTodos } from "../hooks/useTodos";
 import type { Todo } from "../redux/todoSlice";
+import Card from "./ui/Card";
 
 interface TodoListProps {
   filter?: "all" | "completed" | "incomplete";
@@ -21,9 +22,9 @@ export default function TodoList({ filter = "all" }: TodoListProps) {
       : `No ${filter} tasks found.`;
 
     return (
-      <div className="text-center py-8 sm:py-12 bg-white dark:bg-gray-700 rounded-lg shadow-sm border border-gray-100 dark:border-gray-600 transition-colors duration-300">
+      <Card className="text-center py-8 sm:py-12 bg-white dark:bg-gray-700 rounded-lg shadow-sm border border-gray-100 dark:border-gray-600 transition-colors duration-300">
         <p className="text-gray-500 dark:text-gray-400 text-base sm:text-lg">{message}</p>
-      </div>
+      </Card>
     );
   }
 
@@ -38,3 +39,4 @@ export default function TodoList({ filter = "all" }: TodoListProps) {
     </ul>
   );
 }
+

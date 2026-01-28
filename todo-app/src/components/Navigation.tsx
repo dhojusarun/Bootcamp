@@ -1,5 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { useTheme } from "../context/ThemeContext";
+import Button from "./ui/Button";
 
 export default function Navigation() {
     const location = useLocation();
@@ -15,9 +16,10 @@ export default function Navigation() {
 
                     <div className="flex items-center gap-2 sm:gap-4">
                         {/* Theme Toggle Button */}
-                        <button
+                        <Button
+                            variant="ghost"
                             onClick={toggleTheme}
-                            className="p-2 rounded-lg hover:bg-white/20 transition-all duration-300"
+                            className="p-2"
                             aria-label="Toggle theme"
                         >
                             {theme === "light" ? (
@@ -29,7 +31,7 @@ export default function Navigation() {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
                                 </svg>
                             )}
-                        </button>
+                        </Button>
 
                         {/* Navigation Links */}
                         <Link
@@ -65,3 +67,4 @@ export default function Navigation() {
         </nav>
     );
 }
+
