@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import TodoItem from "./TodoItem";
 import { useTodos } from "../hooks/useTodos";
 import type { Todo } from "../redux/todoSlice";
@@ -10,11 +11,11 @@ interface TodoListProps {
 export default function TodoList({ filter = "all" }: TodoListProps) {
   const { todos } = useTodos();
 
-  const filteredTodos = todos.filter((todo: Todo) => {
+  const filteredTodos = useMemo(() => todos.filter((todo: Todo) => {
     if (filter === "completed") return todo.completed;
     if (filter === "incomplete") return !todo.completed;
     return true;
-  });
+  }), [todos, filter]);
 
   if (filteredTodos.length === 0) {
     const message = filter === "all"
@@ -39,4 +40,3 @@ export default function TodoList({ filter = "all" }: TodoListProps) {
     </ul>
   );
 }
-
