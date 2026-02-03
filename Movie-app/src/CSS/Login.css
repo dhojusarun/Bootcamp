@@ -29,6 +29,7 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
+  margin-bottom: 20px;
 }
 
 /* text & password inputs */
@@ -39,7 +40,7 @@
   padding: 12px 14px;
   border: 1px solid #d1d5db;
   border-radius: 6px;
-  font-size: 14px;
+  font-size: 18px;
   outline: none;
 }
 
@@ -62,6 +63,7 @@
   font-size: 13px;
   color: #fff;
   cursor: pointer;
+  font-size: 18px;
 }
 .options {
   display: flex;
@@ -74,8 +76,9 @@
 }
 .options p {
   color: #fff;
-  font-size: 14px;
+  font-size: 16px;
   cursor: pointer;
+  margin-top: 5px;
 }
 .button button {
   width: 500px;

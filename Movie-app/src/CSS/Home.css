@@ -21,11 +21,12 @@
   gap: 20px;
 }
 .text-area {
-  border: 2px solid black;
+  /* border: 2px solid black; */
   padding: 20px;
   width: 1000px;
   border-radius: 10px;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  color:#fff;
 }
 .text-area h1 {
   font-size: 36px;

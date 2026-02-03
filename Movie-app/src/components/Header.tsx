@@ -5,7 +5,7 @@ function Header() {
   return (
     <>
       <nav className="navbar">
-        <h1 className="logo">Smiley</h1>
+        <h1 className="logo">Movie Mania</h1>
         <Search/>
         <div className="nav-links">
             <NavLink to="/">Home</NavLink>
