@@ -1,4 +1,3 @@
-import TrendingMovies from "./TrendingMovies";
 import '../CSS/Home.css';
 import home_image from '../assets/Images/home_image.jpg';
 

@@ -103,18 +103,32 @@
 }
 .register {
   display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 15px;
-  font-size: 18px;
-  text-align: center;
+  align-items: center;
+  justify-content: center; 
+  gap: 10px; 
+  margin-top: 20px;
 }
+
 .register p {
-  color: #fff;
-  margin-bottom: 10px;
+  color: #ffffff; 
+  margin: 0; 
+  font-size: 14px;
 }
+
+.register-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
 .register-btn a {
   text-decoration: none;
-  color: #fff;
+  color: #ffffff;
+  font-weight: bold;
   font-size: 16px;
+}
+
+.register-btn a:hover {
+  text-decoration: underline;
 }
