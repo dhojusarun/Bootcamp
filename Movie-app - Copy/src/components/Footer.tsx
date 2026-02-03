@@ -24,7 +24,7 @@ function Footer() {
                         <button>Subscribe</button>
                     </div>
                 </div>
-                <p>&copy; 2026 Movie App. All rights reserved.</p>
+                <p>&copy; 2024 Movie App. All rights reserved.</p>
             </div>
         </>
     )

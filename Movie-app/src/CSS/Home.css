@@ -1,5 +1,42 @@
-.home{
-    margin-top: 20px;
-    margin-left: 10px;
-    line-height:1.5;
+.home {
+  /* margin-top: 20px; */
+  /* margin-left: 10px; */
+  line-height: 1.5;
+  background: linear-gradient(
+    90deg,
+    #8E2A2A 0%,
+    #B84A4A 40%,
+    #2B0F0F 70%,
+    #000000 100%
+  );
+
+  );
+  padding: 20px;
+}
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 40px;
+  gap: 20px;
+}
+.text-area {
+  border: 2px solid black;
+  padding: 20px;
+  width: 1000px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+.text-area h1 {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+.text-area p {
+  font-size: 20px;
+}
+.container-image img {
+  width: 800px;
+  margin-left: 10px;
+  object-fit: cover;
+  opacity: 0.45;
 }

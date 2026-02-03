@@ -1,11 +1,29 @@
-.login{
-  margin:auto;
-  margin-top:100px;
-    width:400px;
-    padding:30px;
-    border-radius:10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background-color:#fff;  
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(
+    135deg,
+    #7a1e1e 0%,
+    #a33a3a 35%,
+    #2b0f0f 70%,
+    #000000 100%
+  );
+}
+.login {
+  background: linear-gradient(135deg, #7a1e1e 0%, #a33a3a 35%, #2b0f0f 70%);
+  width: 420px;
+  padding: 32px;
+  border-radius: 18px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+}
+.login h1 {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 24px;
+  font-size: 28px;
 }
 .input-fields {
   display: flex;
@@ -42,45 +60,58 @@
 
 .input-fields label {
   font-size: 13px;
-  color: #555;
+  color: #fff;
   cursor: pointer;
 }
-.options{
-    display:flex;
-    justify-content: space-between;
+.options {
+  display: flex;
+  justify-content: space-between;
 }
 .button {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+.options p {
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
 }
 .button button {
-    width:500px;
-    padding: 10px;
-    margin: 0 5px;
-    border: none;
-    border-radius: 8px;
-    background: #ff0000;
-    color: #fff;
-    font-size: 14px;
-    font-weight: bold;
-    cursor: pointer;
-    font-size: 25px;
+  width: 500px;
+  padding: 10px;
+  margin: 0 5px;
+  border: none;
+  border-radius: 8px;
+  background: #ff0000;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 25px;
 }
-.register-btn{
-    background:none;
-    border:none;
-    color:#ff0000;
-    font-weight:bold;
-    cursor:pointer;
-    font-size: 18px;    
+.register-btn {
+  background: none;
+  border: none;
+  color: #ff0000;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 18px;
 }
-.register{
-    margin-top:15px;
-    font-size:18px;
-    text-align: center;
+.register {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+  font-size: 18px;
+  text-align: center;
 }
-.register-btn a{
-    text-decoration:none;
-    color:#ff0000;
+.register p {
+  color: #fff;
+  margin-bottom: 10px;
+}
+.register-btn a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
 }
