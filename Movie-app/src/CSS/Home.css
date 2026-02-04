@@ -10,7 +10,7 @@
     #000000 100%
   );
 
-  );
+  )
   padding: 20px;
 }
 .container {
@@ -40,4 +40,82 @@
   margin-left: 10px;
   object-fit: cover;
   opacity: 0.45;
+}
+/* Page container */
+.home {
+  padding: 40px 0;
+  background-color: #0f0f0f;
+}
+
+/* Center carousel section */
+.carousel-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Title */
+.carousel-header h1 {
+  color: #ffffff;
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+
+/* Carousel viewport */
+.carousel {
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Hide scrollbar (Chrome / Edge / Safari) */
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+/* Horizontal + 2 rows layout */
+.carousel-track {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(2, 1fr); /* ✅ two rows */
+  gap: 20px;
+  width: max-content;
+  padding-bottom: 10px;
+}
+
+/* Movie card */
+.movie-card {
+  width: 180px;
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  padding: 10px;
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Hover effect */
+.movie-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+}
+
+/* Poster image */
+.movie-card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 8px;
+}
+
+/* Movie title */
+.movie-card h3 {
+  font-size: 14px;
+  color: #ffffff;
+  margin: 5px 0;
+}
+
+/* Rating */
+.movie-card p {
+  font-size: 13px;
+  color: #f5c518; /* IMDb yellow */
+  margin: 0;
 }
