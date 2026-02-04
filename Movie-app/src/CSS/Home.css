@@ -92,6 +92,7 @@
   padding: 10px;
   text-align: center;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
 }
 
 /* Hover effect */
