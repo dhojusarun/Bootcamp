@@ -1,5 +1,6 @@
 import '../CSS/Home.css';
 import home_image from '../assets/Images/home_image.jpg';
+import TrendingMovies from './TrendingMovies';
 
 function Home() {
   return (
@@ -13,6 +14,7 @@ function Home() {
         <img src={home_image} alt="Home Page Image" />
         </div>
       </div>
+      <TrendingMovies/>
     </div>
   );
 }
