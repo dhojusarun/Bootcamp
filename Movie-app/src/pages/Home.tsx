@@ -4,6 +4,7 @@ import PopularMovies from './PopularMovies';
 import TrendingMovies from './TrendingMovies';
 
 function Home() {
+  
   return (
     <div className="home">
       <div className="container">
