@@ -2,7 +2,10 @@
   color: #ffffff;
   margin-top: 20px;
 }
-
+.home h1 a{
+  color:#fff;
+  text-decoration: none;
+}
 /* Carousel container */
 .upcoming-movies-container {
   display: flex;

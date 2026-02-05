@@ -1,5 +1,6 @@
 import{ useEffect, useState } from 'react';
 import '../CSS/UpcomingMovies.css';
+import { NavLink } from 'react-router';
 function UpcomingMovies() {
     const [movies, setMovies] = useState([]);
       const [loading, setLoading] = useState(true);
@@ -27,7 +28,7 @@ function UpcomingMovies() {
   return (
     <>
           <div className="home">
-            <h1>Upcoming Movies</h1>
+            <h1><NavLink to="/upcomingmovies">Upcoming Movies</NavLink></h1>
 
             {loading ? (
                 <p>Loading...</p>
