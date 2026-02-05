@@ -82,13 +82,3 @@
   color: #bbbbbb;
 }
 
-/* MOBILE OPTIMIZATION */
-@media (max-width: 768px) {
-  .popular-home-card {
-    width: 140px;
-  }
-
-  .popular-home-header h1 {
-    font-size: 1.3rem;
-  }
-}

@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
-import "../CSS/PopularMovies1.css";
 import { useEffect, useRef, useState } from "react";
+import "../CSS/PopularMovies1.css";
 
 function PopularMoviesHome() {
   const [movies, setMovies] = useState([]);

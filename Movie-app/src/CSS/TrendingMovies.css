@@ -1,0 +1,79 @@
+/* WRAPPER */
+.carousel-wrapper {
+  padding: 20px 0;
+  width: 100%;
+}
+
+/* HEADER */
+.carousel-header {
+  padding: 0 20px;
+  margin-bottom: 14px;
+}
+
+.carousel-header h1 {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.carousel-header a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.carousel-header a:hover {
+  color: #e50914; /* Netflix red vibe */
+}
+
+/* CAROUSEL */
+.carousel {
+  overflow-x: auto;              /* 🔥 enables horizontal scrolling */
+  scroll-behavior: smooth;
+  padding: 0 20px;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;                 /* hide scrollbar */
+}
+
+/* TRACK */
+.carousel-track {
+  display: flex;                 /* one row */
+  gap: 16px;
+  width: max-content;            /* enables scroll */
+}
+
+/* MOVIE CARD */
+.movie-card {
+  flex: 0 0 auto;
+  width: 180px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.movie-card:hover {
+  transform: scale(1.06);
+}
+
+/* POSTER */
+.movie-card img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* TITLE */
+.movie-card h3 {
+  font-size: 0.95rem;
+  margin-top: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* DATE */
+.movie-card p {
+  font-size: 0.8rem;
+  color: #bbbbbb;
+}
+
