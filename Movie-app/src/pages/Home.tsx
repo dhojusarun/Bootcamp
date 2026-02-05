@@ -1,7 +1,5 @@
 import "../CSS/Home.css";
 import home_image from "../assets/Images/home_image.jpg";
-import PopularMoviesHome from "./PopularMoviesHome";
-import TrendingMoviesHome from "./TrendingMoviesHome";
 
 function Home() {
   return (
@@ -21,8 +19,6 @@ function Home() {
           <img src={home_image} alt="Home Page" />
         </div>
       </div>
-      <TrendingMoviesHome />
-<PopularMoviesHome />
       
     </div>
   );
