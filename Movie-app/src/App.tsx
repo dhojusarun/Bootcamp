@@ -7,6 +7,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import TrendingMovies from "./pages/TrendingMovies";
 import PopularMovies from "./pages/PopularMovies";
+import UpcomingMovies from "./components/UpcomingMovies";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/trendingmovies" element={<TrendingMovies />} />
         <Route path="/popularmovies" element={<PopularMovies />} />
+        <Route path="/upcomingmovies" element={<UpcomingMovies />} />
         
         {/* login and signup pages */}
         <Route path="/login" element={<Login />} />

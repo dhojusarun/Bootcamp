@@ -2,12 +2,9 @@
   color: #ffffff;
   margin-top: 20px;
 }
-.home h1 a{
-  color:#fff;
-  text-decoration: none;
-}
+
 /* Carousel container */
-.trending-movies-container {
+.upcoming-movies-container {
   display: flex;
   overflow-x: auto;
   gap: 1rem;
@@ -17,10 +14,10 @@
 }
 
 /* Hide scrollbar but allow scrolling */
-.trending-movies-container::-webkit-scrollbar {
+.upcoming-movies-container::-webkit-scrollbar {
   display: none;
 }
-.trending-movies-container {
+.upcoming-movies-container {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }

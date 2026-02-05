@@ -3,6 +3,7 @@ import HeroSection from "../components/HeroSection";
 import TrendingMovies from "../components/TrendingMovies";
 import home_image from "../assets/Images/home_image.jpg";
 import PopularMovies from "../components/PopularMovies";
+import UpcomingMovies from "../components/UpcomingMovies";
 
 function Home() {
   return (
@@ -13,6 +14,7 @@ function Home() {
         image={home_image}
       />
       <TrendingMovies />
+      <UpcomingMovies/>
       <PopularMovies/>
     </>
   );

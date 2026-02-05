@@ -11,7 +11,7 @@ function Header() {
             <NavLink to="/">Home</NavLink>
             <NavLink to="/trendingmovies">Trending Movies</NavLink>
             <NavLink to="/popularmovies">Popular Movies</NavLink>
-            <NavLink to="/newmovies">New Movies</NavLink>
+            <NavLink to="/upcomingmovies">Upcoming Movies</NavLink>
         </div>
           <button className="login-btn"><NavLink to="/login">Login</NavLink></button>
         </nav>
