@@ -20,26 +20,22 @@
   color: #ffffff;
 }
 
-.trending-home-header a:hover {
-  color: #e50914; /* hover color */
-}
-
 /* CAROUSEL */
 .trending-home-carousel {
-  overflow-x: auto;            /* enables horizontal scroll */
+  overflow-x: auto;           
   scroll-behavior: smooth;
   padding: 0 20px;
 }
 
 .trending-home-carousel::-webkit-scrollbar {
-  display: none;               /* hide scrollbar */
+  display: none;               
 }
 
 /* TRACK */
 .trending-home-track {
-  display: flex;               /* one row only */
+  display: flex;            
   gap: 16px;
-  width: max-content;          /* allows scrolling */
+  width: max-content;          
 }
 
 /* MOVIE CARD */
