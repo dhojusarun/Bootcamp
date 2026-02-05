@@ -18,7 +18,10 @@
   font-size: 1.6rem;
   font-weight: 600;
 }
-
+.popular-home-header a {
+  color: #ffffff;
+  text-decoration: none;
+}
 /* LOADING */
 .popular-home-loading {
   text-align: center;

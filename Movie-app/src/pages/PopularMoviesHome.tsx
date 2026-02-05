@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import "../CSS/PopularMovies1.css";
 import { useEffect, useRef, useState } from "react";
 
@@ -35,7 +36,7 @@ function PopularMoviesHome() {
   return (
     <section className="popular-home-section">
       <div className="popular-home-header">
-        <h1>Popular Movies</h1>
+        <h1><NavLink to="/popularmovies">Popular Movies</NavLink></h1>
       </div>
 
       <div className="popular-home-carousel" ref={carouselRef}>
