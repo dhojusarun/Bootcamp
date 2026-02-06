@@ -21,7 +21,7 @@ function TrendingMovies() {
         fetch('https://api.themoviedb.org/3/trending/all/day?language=en-US', options)
             .then(res => res.json())
             .then(data => {
-                setMovies(data.results.slice(0,10));
+                setMovies(data.results.slice(0, 10));
                 setLoading(false);
             })
             .catch(err => {
@@ -32,7 +32,7 @@ function TrendingMovies() {
 
     return (
         <div className="home">
-            <h1><NavLink to = "/trendingmovies">Trending Movies</NavLink></h1>
+            <h1><NavLink to="/trendingmovies">Trending Movies</NavLink></h1>
 
             {loading ? (
                 <p>Loading...</p>
@@ -40,7 +40,9 @@ function TrendingMovies() {
                 <div className="trending-movies-container">
                     {movies.map(movie => (
                         <MovieCard
-                            title={movie.title || movie.name} 
+                            key={movie.id}
+                            id={movie.id}
+                            title={movie.title || movie.name}
                             poster_path={movie.poster_path}
                             release_date={movie.release_date || movie.first_air_date}
                         />

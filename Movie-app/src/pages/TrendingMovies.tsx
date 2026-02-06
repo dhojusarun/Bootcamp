@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
-import '../CSS/Home.css';
-import '../CSS/TrendingMovies.css';
+import MovieCard from '../components/MovieCard';
 
 function TrendingMovies() {
     const [movies, setMovies] = useState([]);
@@ -36,14 +35,13 @@ function TrendingMovies() {
             ) : (
                 <div className="trending-movies-container">
                     {movies.map(movie => (
-                        <div key={movie.id} className="movie-card">
-                            <img
-                                src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
-                                alt={movie.title}
-                            />
-                            <h3>{movie.title || movie.name}</h3>
-                            <p>{movie.release_date || movie.first_air_date}</p>
-                        </div>
+                        <MovieCard
+                            key={movie.id}
+                            id={movie.id}
+                            title={movie.title || movie.name}
+                            poster_path={movie.poster_path}
+                            release_date={movie.release_date || movie.first_air_date}
+                        />
                     ))}
                 </div>
             )}

@@ -1,5 +1,5 @@
-import "../CSS/Home.css";
-import { useState ,useEffect } from "react";
+import { useState, useEffect } from "react";
+import MovieCard from "../components/MovieCard";
 
 function PopularMovies() {
   const [movies, setMovies] = useState([]);
@@ -32,14 +32,13 @@ function PopularMovies() {
       {loading ? <p>Loading...</p> : (
         <div className="popular-movies-container">
           {movies.map(movie => (
-            <div key={movie.id} className="movie-card">
-              <img
-                src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
-                alt={movie.title}
-              />
-              <h3>{movie.title}</h3>
-              <p>{movie.release_date}</p>
-            </div>
+            <MovieCard
+              key={movie.id}
+              id={movie.id}
+              title={movie.title}
+              poster_path={movie.poster_path}
+              release_date={movie.release_date}
+            />
           ))}
         </div>
       )}

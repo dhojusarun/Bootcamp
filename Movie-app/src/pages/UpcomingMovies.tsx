@@ -1,6 +1,5 @@
-import{ useEffect, useState } from 'react';
-import '../CSS/Home.css';
-import '../CSS/UpcomingMovies.css';
+import { useEffect, useState } from 'react';
+import MovieCard from '../components/MovieCard';
 
 function UpcomingMovies() {
     const [movies, setMovies] = useState([]);
@@ -36,14 +35,13 @@ function UpcomingMovies() {
             ) : (
                 <div className="upcoming-movies-container">
                     {movies.map(movie => (
-                        <div key={movie.id} className="movie-card">
-                            <img
-                                src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
-                                alt={movie.title}
-                            />
-                            <h3>{movie.title}</h3>
-                            <p>{movie.release_date}</p>
-                        </div>
+                        <MovieCard
+                            key={movie.id}
+                            id={movie.id}
+                            title={movie.title}
+                            poster_path={movie.poster_path}
+                            release_date={movie.release_date}
+                        />
                     ))}
                 </div>
             )}
