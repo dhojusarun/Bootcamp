@@ -1,3 +1,4 @@
+// src/components/TrendingMovies.jsx
 import { useEffect, useState } from 'react';
 import MovieCard from './MovieCard';
 import '../CSS/PopularMovies.css';
@@ -20,20 +21,18 @@ function PopularMovies() {
         fetch('https://api.themoviedb.org/3/movie/popular?language=en-US&page=1', options)
             .then(res => res.json())
             .then(data => {
-                setMovies(data.results.slice(0, 10));
+                setMovies(data.results.slice(0,10));
                 setLoading(false);
             })
             .catch(err => {
-                console.error('Error fetching popular movies:', err);
+                console.error('Error fetching trending movies:', err);
                 setLoading(false);
             });
     }, []);
 
     return (
         <div className="home">
-            <h1>
-                <NavLink to="/popularmovies">Popular Movies</NavLink>
-            </h1>
+            <h1><NavLink to = "/popularmovies">Popular Movies</NavLink></h1>
 
             {loading ? (
                 <p>Loading...</p>
@@ -41,9 +40,7 @@ function PopularMovies() {
                 <div className="popular-movies-container">
                     {movies.map(movie => (
                         <MovieCard
-                            key={movie.id}                  // ✅ unique key
-                            id={movie.id}                   // ✅ needed for navigation
-                            title={movie.title || movie.name}
+                            title={movie.title || movie.name} 
                             poster_path={movie.poster_path}
                             release_date={movie.release_date || movie.first_air_date}
                         />

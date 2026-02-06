@@ -7,7 +7,6 @@ import Register from "./pages/Register";
 import TrendingMovies from "./pages/TrendingMovies";
 import PopularMovies from "./pages/PopularMovies";
 import UpcomingMovies from "./components/UpcomingMovies";
-import MovieDetails from "./pages/MovieDetails";
 
 function App() {
   return (
@@ -19,7 +18,6 @@ function App() {
         <Route path="/trendingmovies" element={<TrendingMovies />} />
         <Route path="/popularmovies" element={<PopularMovies />} />
         <Route path="/upcomingmovies" element={<UpcomingMovies />} />
-        <Route path="/moviedetails/:id" element={<MovieDetails />} />
         
         {/* login and signup pages */}
         <Route path="/login" element={<Login />} />
