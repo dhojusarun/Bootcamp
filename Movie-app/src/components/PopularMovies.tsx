@@ -40,6 +40,8 @@ function PopularMovies() {
                 <div className="popular-movies-container">
                     {movies.map(movie => (
                         <MovieCard
+                            key={movie.id}
+                            id={movie.id}
                             title={movie.title || movie.name}
                             poster_path={movie.poster_path}
                             release_date={movie.release_date || movie.first_air_date}

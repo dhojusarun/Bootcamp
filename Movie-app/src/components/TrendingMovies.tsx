@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import MovieCard from './MovieCard';
 import '../CSS/TrendingMovies.css';
-import { NavLink } from 'react-router';
+import { NavLink } from 'react-router-dom';
 
 function TrendingMovies() {
     const [movies, setMovies] = useState([]);
