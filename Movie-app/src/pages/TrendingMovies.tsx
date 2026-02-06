@@ -1,4 +1,4 @@
-import{ useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import '../CSS/Home.css';
 import '../CSS/TrendingMovies.css';
 
@@ -41,8 +41,8 @@ function TrendingMovies() {
                                 src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
                                 alt={movie.title}
                             />
-                            <h3>{movie.title}</h3>
-                            <p>{movie.release_date}</p>
+                            <h3>{movie.title || movie.name}</h3>
+                            <p>{movie.release_date || movie.first_air_date}</p>
                         </div>
                     ))}
                 </div>
