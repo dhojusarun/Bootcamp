@@ -20,26 +20,40 @@ function MovieDetails() {
     useEffect(() => {
         if (!id) return;
         setLoading(true);
-        fetch(`https://api.themoviedb.org/3/movie/${id}?language=en-US`, options)
-            .then(res => res.json())
-            .then(data => {
-                if (data.success === false) {
-                    console.error('API returned error:', data.status_message);
+
+        const fetchDetails = async () => {
+            try {
+                // Try fetching as a movie first
+                let res = await fetch(`https://api.themoviedb.org/3/movie/${id}?language=en-US`, options);
+                let data = await res.json();
+
+                if (data.success === false || res.status === 404) {
+                    // If movie fails, try fetching as a TV show
+                    res = await fetch(`https://api.themoviedb.org/3/tv/${id}?language=en-US`, options);
+                    data = await res.json();
+                }
+
+                if (data.success === false || res.status === 404) {
                     setMovie(null);
                 } else {
                     setMovie(data);
                 }
-                setLoading(false);
-            })
-            .catch(err => {
-                console.error('Error fetching movie details:', err);
+            } catch (err) {
+                console.error('Error fetching details:', err);
                 setMovie(null);
+            } finally {
                 setLoading(false);
-            });
+            }
+        };
+
+        fetchDetails();
     }, [id]);
 
     if (loading) return <div className="home"><p>Loading...</p></div>;
-    if (!movie || movie.success === false) return <div className="home"><p>Movie not found.</p></div>;
+    if (!movie) return <div className="home"><p>Movie or TV show not found.</p></div>;
+
+    const title = movie.title || movie.name;
+    const releaseDate = movie.release_date || movie.first_air_date;
 
     return (
         <div className="home" style={{ padding: '20px', color: 'white' }}>
@@ -47,15 +61,15 @@ function MovieDetails() {
                 {movie.poster_path && (
                     <img
                         src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-                        alt={movie.title}
+                        alt={title}
                         style={{ borderRadius: '8px', maxWidth: '300px' }}
                     />
                 )}
                 <div style={{ flex: 1, minWidth: '300px' }}>
-                    <h1 style={{ margin: '0 0 10px 0' }}>{movie.title}</h1>
+                    <h1 style={{ margin: '0 0 10px 0' }}>{title}</h1>
                     {movie.tagline && <p style={{ fontSize: '1.2rem', color: '#999' }}>{movie.tagline}</p>}
                     <div style={{ margin: '20px 0' }}>
-                        <strong>Release Date:</strong> {movie.release_date || 'N/A'}
+                        <strong>Release Date:</strong> {releaseDate || 'N/A'}
                     </div>
                     <div style={{ margin: '20px 0' }}>
                         <strong>Rating:</strong> {movie.vote_average ? movie.vote_average.toFixed(1) : 'N/A'} / 10
